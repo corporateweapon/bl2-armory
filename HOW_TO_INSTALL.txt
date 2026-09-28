@@ -1,0 +1,40 @@
+Armory 1.1.0
+the framework for custom weapons and character skins (includes the Boxgun)
+========================================================================
+
+Requires: Borderlands 2 on Steam (Windows) with the willow2-mod-manager
+(https://bl-sdk.github.io/willow2-mod-db/). Close the game before installing.
+
+OPTION 1 (easiest): double-click Install.bat
+  1. Extract this WHOLE zip to a normal folder first (right-click the zip > Extract All...).
+     Don't run Install.bat from inside the zip window.
+  2. Open the extracted folder and double-click Install.bat.
+     It finds your Borderlands 2 folder through Steam (or asks you to pick it), copies the
+     files below into it, checks every copy, and tells you what it did.
+  Windows warns about any script that came out of a downloaded zip. "Windows protected your
+  PC": click "More info" then "Run anyway". "Open File - Security Warning": click "Run".
+  To skip the warning: before extracting, right-click the zip > Properties > tick "Unblock" > OK.
+
+OPTION 2: drag and drop (no scripts)
+  1. Open your Borderlands 2 folder: in Steam, right-click Borderlands 2 > Manage >
+     Browse local files. It is the folder holding Binaries, WillowGame and sdk_mods.
+  2. From the extracted zip, drag the "sdk_mods" and "WillowGame" folders onto that window.
+     When Windows asks, choose "Replace the files in the destination". Folders merge; nothing
+     of the game's own is replaced. These are the files that land in the game folder:
+      WillowGame\CookedPCConsole\PipelineMeshesBoxgun.upk
+      sdk_mods\ArmoryPacks\boxgun\LICENSE.txt
+      sdk_mods\ArmoryPacks\boxgun\README.md
+      sdk_mods\ArmoryPacks\boxgun\armory_pack.json
+      sdk_mods\Armory\CREATING_PACKS.md
+      sdk_mods\Armory\LICENSE
+      sdk_mods\Armory\README.md
+      sdk_mods\Armory\__init__.py
+      sdk_mods\Armory\pyproject.toml
+      sdk_mods\Armory\_render\... (the Armory's code)
+  Install.bat, Uninstall.bat, the _installer folder and this file do NOT go into the game.
+
+UNINSTALL: double-click Uninstall.bat, or delete the files listed above.
+
+Start Borderlands 2 and wait for the main menu before loading a character. Mods > Armory
+lists the weapons (F5 spawns the selected one) and the character skins. In the console:
+'armory packs' shows what loaded and why anything did not.

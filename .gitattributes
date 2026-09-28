@@ -1,0 +1,2 @@
+# Store every file byte for byte: the .bat launchers must keep CRLF, the .upk is binary.
+* -text
