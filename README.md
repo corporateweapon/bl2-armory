@@ -1,13 +1,16 @@
 # Armory for Borderlands 2
 
-By **corporateweapon** (Reddit: [u/44M0N](https://www.reddit.com/user/44M0N)).
+By **44M0N**.
 
-Custom weapons and character skins for Borderlands 2 (Steam, Windows). This repo is the
-**Armory**: the mod that loads them, plus a double-click installer. The weapons and skins
-themselves are separate downloads (*packs*) on the [Releases](../../releases) page.
+The Armory adds **new weapons** to Borderlands 2 (Steam, Windows). Not reskins: each
+weapon has its own model, parts, name, red text, stats and loot-pool entry. It also loads
+**character skins** that replace a vault hunter's body and first-person arms. None of the
+game's files are changed.
 
-**Private.** Shared with colleagues only. Some packs contain models and sounds from other
-games, so please don't re-upload or share them publicly.
+This repo is the Armory itself: the mod that loads weapon packs, plus a double-click
+installer. Weapons and skins come as separate **packs**, each a small zip, made by anyone
+with the [bl2-part-pipeline](https://github.com/corporateweapon/bl2-part-pipeline). The
+Armory ships with one weapon, the **Boxgun**, so you can check that everything works.
 
 ## What you need first
 
@@ -39,39 +42,33 @@ If Windows warns you when you double-click:
 
 This happens for any script from a downloaded zip. Step 2 above avoids it.
 
-The Armory comes with one test weapon, the **Boxgun**.
-
-## Step 2: install weapons and skins
-
-Download the packs you want from [Releases](../../releases). Install each one the same way:
-extract it, then double-click its **`Install.bat`**. Install the Armory first.
-
-| Download | What it adds | Spawn command |
-|---|---|---|
-| `ArmoryPack-ak47-1.0.0.zip` | **AK-47** assault rifle | `armory spawn ak47` |
-| `ArmoryPack-awp-1.0.0.zip` | **AWP** sniper rifle (custom fire sound) | `armory spawn awp` |
-| `ArmoryPack-deagle-1.0.0.zip` | **Desert Eagle** pistol (custom fire sound) | `armory spawn deagle` |
-| `ArmoryPack-busted_flush-1.0.0.zip` | **The Busted Flush**, Shiv's shotgun (details below) | `armory spawn shiv` |
-| `ArmoryPack-mina-1.0.0.zip` | **Mina** (Deadlock) skin for **Gaige** | none: worn automatically |
-| `ArmoryPack-ct_sas-1.0.0.zip` | **CS2 SAS (CT)** skin for **Krieg** | none: worn automatically |
-
-**The Busted Flush:** no aim-down-sights. Left click fires one shell. Right click fires a
-2-round blast for 3× damage, with heavy recoil and a small knockback. Hits, blasts and kills
-build **Rage** (the red meter). At 100% you move faster and deal 25% more damage. Rage drains
-after 10 seconds without action.
-
-## Step 3: check it in game
+## Step 2: check it in game
 
 1. Start Borderlands 2 and **wait for the title screen** before loading a character.
 2. Open **Mods**. **Armory** should be listed and enabled. **Armory → Packs** lists every
    pack that loaded.
-3. Load a character and press **F5**: the weapon selected under **Mods → Armory → Weapon**
-   appears in your hands at your level.
-4. Skins are worn as soon as you load Gaige or Krieg. Switch them under
-   **Mods → Armory → Characters**.
+3. Load a character and press **F5**: a Boxgun appears in your hands at your level.
 
-Console (the `~` key): `armory list` shows the weapon ids, `armory packs` shows what loaded
-and **why anything didn't**, `characters list` shows the skins.
+| How | What it does |
+|---|---|
+| **F5** | Spawns the weapon selected under **Mods → Armory → Weapon**. Rebind it under **Mods → Armory → Keybinds**. |
+| Console `armory list` | Every weapon id you have installed |
+| Console `armory spawn boxgun` | Spawns by id. Add `--level 50` for a level, `--no-equip` to send it to the backpack |
+| Console `armory packs` | What loaded and **why anything didn't** |
+| **Mods → Armory → Characters** | Shown when a skin pack is installed: pick a skin or the game's own model per vault hunter |
+
+The console opens with the `~` key. Armory weapons also drop in the world, from the loot pool
+each pack's creator chose. The Boxgun drops from the legendary assault rifle pool.
+
+## Step 3: add weapons and skins
+
+A pack is a zip laid out exactly like the Armory's. Install it the same way: extract it, then
+double-click its **`Install.bat`**. Install the Armory first, and restart the game after
+adding a pack. Its `HOW_TO_INSTALL.txt` lists every file it adds, and its `Uninstall.bat`
+removes exactly those.
+
+Want to make one? The [bl2-part-pipeline](https://github.com/corporateweapon/bl2-part-pipeline)
+turns a 3D model into a pack. The guide is `sdk_mods\Armory\CREATING_PACKS.md`, included here.
 
 ## Updating, uninstalling
 
@@ -133,5 +130,5 @@ sdk_mods\ArmoryPacks\boxgun\    the Boxgun test weapon
 WillowGame\CookedPCConsole\PipelineMeshesBoxgun.upk
 ```
 
-The packs on the Releases page were built with the bl2-part-pipeline. How to make your own
-packs: `sdk_mods\Armory\CREATING_PACKS.md`.
+The Armory is MIT licensed. The Boxgun is CC0. Built on the BL-SDK willow2-mod-manager;
+thanks to its developers.
